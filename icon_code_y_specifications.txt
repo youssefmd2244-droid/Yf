@@ -1,0 +1,23 @@
+# Icon Code Y - Project Specifications
+
+## Concept
+Next-Gen AI-Driven Content Factory & Multi-Channel Social Media Automation Ecosystem.
+
+## Core Functionalities
+- **AI Generation Engine**: Text-to-Video, Image-to-Video (5s to 6 mins), Text-to-Image (any aspect ratio).
+- **Multi-Niche Support**: Funny, Educational, Technical, Cinematic, Anime, Horror, Hyper-Realistic.
+- **AI Upscaling**: 4K for YouTube, optimized for TikTok/Reels.
+- **Smart Automation**: Full Social Media Sync (IG, FB, TikTok, YT, etc.), Autonomous Posting (10+ daily), Strategic Analytics (Golden Posting Time).
+
+## Design Aesthetic
+- 5D/6D Holographic UI
+- Hexagonal/Polygonal geometry
+- Dark mode with neon accents
+
+## Mandatory Footer
+- Developer: Eng. Youssef Mohamed El-Sayed
+- Contact: WhatsApp (+201094555299)
+- CTA: "للتواصل"
+
+## Policy
+100% Free Forever, Open-Source Integration, Unlimited Generation.
