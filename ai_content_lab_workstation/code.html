@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ICON CODE Y | AI Content Lab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #131313;
+            overflow-x: hidden;
+        }
+        .hexagon-clip {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+        .blade-cut {
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+        }
+        .glass-panel {
+            backdrop-filter: blur(30px);
+            background: rgba(19, 19, 19, 0.7);
+            border: 1px solid rgba(0, 219, 231, 0.1);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 20px rgba(0, 219, 231, 0.2);
+        }
+        .corner-bracket-tl { border-top: 2px solid #00dbe7; border-left: 2px solid #00dbe7; width: 12px; height: 12px; position: absolute; top: -2px; left: -2px; }
+        .corner-bracket-tr { border-top: 2px solid #00dbe7; border-right: 2px solid #00dbe7; width: 12px; height: 12px; position: absolute; top: -2px; right: -2px; }
+        .corner-bracket-bl { border-bottom: 2px solid #00dbe7; border-left: 2px solid #00dbe7; width: 12px; height: 12px; position: absolute; bottom: -2px; left: -2px; }
+        .corner-bracket-br { border-bottom: 2px solid #00dbe7; border-right: 2px solid #00dbe7; width: 12px; height: 12px; position: absolute; bottom: -2px; right: -2px; }
+        
+        .void-bg {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0e0e0e 100%);
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+        }
+        .grid-mesh {
+            background-image: linear-gradient(rgba(0, 219, 231, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 219, 231, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-fixed": "#320047",
+                      "surface": "#131313",
+                      "inverse-surface": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "primary": "#e1fdff",
+                      "secondary-fixed": "#f8d8ff",
+                      "secondary": "#ebb2ff",
+                      "primary-container": "#00f2ff",
+                      "on-surface": "#e5e2e1",
+                      "primary-fixed": "#74f5ff",
+                      "background": "#131313",
+                      "on-tertiary": "#053900",
+                      "on-tertiary-fixed": "#022100",
+                      "on-secondary-fixed-variant": "#74009f",
+                      "inverse-primary": "#00696f",
+                      "tertiary": "#e4ffd6",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-container": "#106f00",
+                      "surface-tint": "#00dbe7",
+                      "on-primary": "#00363a",
+                      "on-secondary-container": "#480064",
+                      "tertiary-fixed-dim": "#2ae500",
+                      "tertiary-container": "#34fc0d",
+                      "on-secondary": "#520071",
+                      "on-primary-container": "#006a71",
+                      "surface-container": "#201f1f",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#79ff5b",
+                      "on-tertiary-fixed-variant": "#095300",
+                      "on-primary-fixed-variant": "#004f54",
+                      "outline": "#849495",
+                      "on-primary-fixed": "#002022",
+                      "surface-container-low": "#1c1b1b",
+                      "inverse-on-surface": "#313030",
+                      "error": "#ffb4ab",
+                      "surface-container-lowest": "#0e0e0e",
+                      "secondary-container": "#ce5dff",
+                      "primary-fixed-dim": "#00dbe7",
+                      "error-container": "#93000a",
+                      "surface-dim": "#131313",
+                      "secondary-fixed-dim": "#ebb2ff",
+                      "outline-variant": "#3a494b",
+                      "surface-bright": "#3a3939",
+                      "surface-variant": "#353534",
+                      "surface-container-highest": "#353534",
+                      "on-surface-variant": "#b9cacb"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "xxl": "80px",
+                      "xl": "48px",
+                      "margin": "40px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "code": ["Space Grotesk"],
+                      "label-caps": ["Space Grotesk"],
+                      "body-lg": ["Space Grotesk"],
+                      "body-md": ["Space Grotesk"],
+                      "h1": ["Space Grotesk"],
+                      "h3": ["Space Grotesk"],
+                      "h2": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "h3": ["24px", {"lineHeight": "1.3", "letterSpacing": "0em", "fontWeight": "600"}],
+                      "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="text-on-background min-h-screen flex flex-col">
+<div class="void-bg"></div>
+<div class="grid-mesh"></div>
+<!-- Top Navigation Bar -->
+<header class="flex justify-between items-center px-margin py-md w-full z-50 bg-surface/10 backdrop-blur-[30px] border-b border-outline-variant/30 sticky top-0 shadow-[0_0_20px_rgba(0,219,231,0.2)]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary-fixed-dim cursor-pointer active:scale-95 transition-transform duration-300" data-icon="grid_view">grid_view</span>
+<h1 class="font-h2 text-h2 font-bold text-primary-fixed-dim drop-shadow-[0_0_15px_rgba(0,219,231,0.5)] tracking-tighter">ICON CODE Y</h1>
+</div>
+<div class="flex items-center gap-lg">
+<div class="hidden md:flex gap-xl">
+<span class="text-primary-fixed-dim font-label-caps text-label-caps cursor-pointer hover:scale-105 transition-transform">FACTORY</span>
+<span class="text-outline font-label-caps text-label-caps cursor-pointer hover:text-primary-fixed-dim transition-all">ASSETS</span>
+<span class="text-outline font-label-caps text-label-caps cursor-pointer hover:text-primary-fixed-dim transition-all">ANALYTICS</span>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary-fixed-dim p-0.5 overflow-hidden shadow-[0_0_10px_rgba(0,219,231,0.4)]">
+<img alt="User Profile Hologram" class="w-full h-full object-cover rounded-full" data-alt="A futuristic digital avatar portrait displayed as a shimmering holographic projection. The character is an advanced AI operator with subtle glowing geometric tattoos on their face, illuminated by cool cyan and magenta rim lighting against a deep black void. The image has a sharp, high-tech, digital aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAia7T0UGNE62EBY0QbZoZLBDn60Oty_W3mWEC5qPpb93JT1tjv2VARJnfmheXEkWM_KN1lLrwj0xryCsAjJyKQhJt0DPl7YV4taEAKxxNgJUv_BGcCeux_DVvJq5wdijAtrR3JUbYMVBvFJuzGTKw6FMZ8FdrzQsDFHiNOuqY5zndR3L50UsmilHAP9uPzkZn2pdfwSLB5ph90bYolxW2ntBdZ_apcYviAbY877klAO_6hzXwuZCGUjt1SHcrQYhBhpRR096cuoQ"/>
+</div>
+</div>
+</header>
+<main class="flex-grow flex p-gutter gap-gutter mt-sm">
+<!-- Sidebar Control -->
+<aside class="w-20 md:w-64 flex flex-col gap-md">
+<div class="flex flex-col gap-sm">
+<div class="blade-cut bg-secondary-container/20 border-l-4 border-secondary p-md flex items-center gap-md cursor-pointer group transition-all">
+<span class="material-symbols-outlined text-secondary" data-icon="deployed_code" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
+<span class="hidden md:block font-label-caps text-label-caps text-secondary">Text-to-Video</span>
+</div>
+<div class="blade-cut bg-surface-container-low border-l-4 border-transparent p-md flex items-center gap-md cursor-pointer hover:bg-surface-container-high transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="hub">hub</span>
+<span class="hidden md:block font-label-caps text-label-caps text-outline group-hover:text-primary">Image-to-Video</span>
+</div>
+<div class="blade-cut bg-surface-container-low border-l-4 border-transparent p-md flex items-center gap-md cursor-pointer hover:bg-surface-container-high transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary" data-icon="auto_awesome">auto_awesome</span>
+<span class="hidden md:block font-label-caps text-label-caps text-outline group-hover:text-primary">Text-to-Image</span>
+</div>
+</div>
+<div class="mt-xl">
+<h3 class="font-label-caps text-label-caps text-outline mb-md px-sm">SPECIALIZATION</h3>
+<div class="grid grid-cols-2 gap-sm">
+<div class="hexagon-clip w-20 h-24 bg-surface-container-high flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-all hover:bg-primary-container/20 group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-fixed-dim" data-icon="movie">movie</span>
+<span class="text-[8px] font-bold mt-1 text-outline group-hover:text-primary-fixed-dim">CINEMATIC</span>
+</div>
+<div class="hexagon-clip w-20 h-24 bg-surface-container-high flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-all hover:bg-primary-container/20 group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-fixed-dim" data-icon="face">face</span>
+<span class="text-[8px] font-bold mt-1 text-outline group-hover:text-primary-fixed-dim">ANIME</span>
+</div>
+<div class="hexagon-clip w-20 h-24 bg-surface-container-high flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-all hover:bg-primary-container/20 group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-fixed-dim" data-icon="skull">skull</span>
+<span class="text-[8px] font-bold mt-1 text-outline group-hover:text-primary-fixed-dim">HORROR</span>
+</div>
+<div class="hexagon-clip w-20 h-24 bg-surface-container-high flex flex-col items-center justify-center cursor-pointer hover:scale-105 transition-all hover:bg-primary-container/20 group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary-fixed-dim" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="text-[8px] font-bold mt-1 text-outline group-hover:text-primary-fixed-dim">HYPER-REAL</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Center Canvas -->
+<section class="flex-grow flex flex-col gap-gutter">
+<!-- Live Preview Engine -->
+<div class="relative flex-grow glass-panel rounded-xl overflow-hidden border border-primary/20 neon-glow-cyan group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-105" data-alt="A hyper-detailed rendering of an advanced AI server core pulsating with cyan and magenta light energy. Intricate fiber-optic data pipelines intersect in a complex 3D lattice. The atmosphere is filled with a soft neon mist and particulate light effects, creating a deep, cinematic techno-futuristic scene within a high-performance compute environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUdF3c-FGJjNas3SvkNrhnQxO7xP3RVStMCoXRhwRCANWkMp4ISEFBAvtEvt8K3N0b2iXcCY3iAXzuqpfFP5uDA-Ugl3ObtojbBt6c68whSMLIvK9N3CHyK1Whiywi6jp3Tbi_zjbYMgb61Ah8TqvByQNkyeNbiSxFz3UKQatCt4WQmK-AqlVt99aVInO7Ydytki9rF2BNYqcATQp-KWua-t9xvZwohnFl1Co-h2C0IwLQN1RYAKbA-CG-VsS10aY_1AUkAYNC8A"/>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-lg bg-gradient-to-t from-black/80 to-transparent z-10">
+<div class="flex justify-between items-end mb-sm">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-primary-fixed-dim">Rendering Frame Vectors</p>
+<div class="flex items-center gap-sm">
+<div class="w-64 h-1 bg-outline-variant/30 rounded-full overflow-hidden">
+<div class="w-[67%] h-full bg-primary-container shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+<span class="font-code text-code text-primary-fixed-dim">67%</span>
+</div>
+</div>
+<div class="text-right">
+<span class="font-code text-code text-outline">FRAME: 1042 / 1500</span>
+</div>
+</div>
+</div>
+<!-- HUD Overlays -->
+<div class="absolute top-md right-md flex gap-sm z-20">
+<button class="w-10 h-10 glass-panel flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="fullscreen">fullscreen</span>
+</button>
+<button class="w-10 h-10 glass-panel flex items-center justify-center hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="settings_input_component">settings_input_component</span>
+</button>
+</div>
+</div>
+<!-- Central Command Input -->
+<div class="relative glass-panel p-lg rounded-xl border border-outline-variant/30">
+<div class="corner-bracket-tl"></div>
+<div class="corner-bracket-tr"></div>
+<div class="corner-bracket-bl"></div>
+<div class="corner-bracket-br"></div>
+<div class="flex justify-between items-center mb-sm">
+<label class="font-label-caps text-label-caps text-outline">INPUT COMMANDS</label>
+<span class="font-code text-code text-primary-fixed-dim opacity-70">PRMT-48.2% telemetry</span>
+</div>
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-body-lg font-body-lg text-primary placeholder-outline/30 h-24 resize-none" placeholder="DESCRIBE THE NEURAL VISUALIZATION..."></textarea>
+<div class="flex justify-between items-center mt-md">
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-all" data-icon="mic">mic</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-all" data-icon="attach_file">attach_file</span>
+</div>
+<button class="blade-cut bg-primary-container/20 border border-primary-container px-xl py-sm flex items-center gap-md group hover:bg-primary-container/40 transition-all shadow-[0_0_15px_rgba(0,242,255,0.3)]">
+<span class="font-label-caps text-label-caps text-primary-fixed-dim">GENERATE ASSET</span>
+<span class="material-symbols-outlined text-primary-fixed-dim group-hover:rotate-180 transition-transform duration-500" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Right Side Stats/Recent -->
+<aside class="hidden xl:flex w-72 flex-col gap-gutter">
+<div class="glass-panel p-md rounded-xl space-y-md">
+<h3 class="font-label-caps text-label-caps text-outline">RECENT OUTPUTS</h3>
+<div class="space-y-sm">
+<div class="aspect-video rounded bg-surface-container-highest relative overflow-hidden group cursor-pointer">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A minimalist abstract render of geometric glass spheres floating in a void, reflecting neon purple and deep cyan light. Professional studio lighting and high-contrast shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAMK5760_d5LtRP0KS0qxyKfHEoUhIWxy7fSDENSrr2v0Tje6b9qB2NhzqLb5wc5xKnfBJDnbGGfoyHlvZBGQpG_2zG5X4KDQjYgNZaNCd8PovbK69KrcR2ZoLf3Ys2BhzanvW0X2TsEJKa1Fgnwcx07VBzZACgGncvONXNH5Ydvq2UpPMtgFpjyjTV7bWQzgLNFwzdPgsE2IY6ho2gmcNy_VaoIF8_6yDEUbUzMUWbeZmLwwiMDyaPLbOo_0s1rYk0jNSJsz_vA"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<div class="aspect-video rounded bg-surface-container-highest relative overflow-hidden group cursor-pointer">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A dark digital landscape with glowing topography lines in vibrant cyan. The terrain flows like data waves under a midnight black sky. Modern 3D digital art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLCqcYrDSr-vHF__JxDuvConhIFPAhttevD-xPJVbbPaUJonDHxXgZ9XttHykXZUVVUvpNjhOnhRAr6sgnPNaDchV7TBo7HAI-DAp6zw_37UikmjEgWZ2KLCidSKm7kMG5VpKuz83vY6lcfaHuOdS65xD1j8h0gyB2IZ9P0n0RgswyNVxZuk6bd8MQHtV11itB1sMAszbKnFM20tSnO-so_glwjwMMX4sDxcpF39WgAxVB0oJcXonZbsSRxLGPxKAWGVCzXvEsEA"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-md rounded-xl">
+<h3 class="font-label-caps text-label-caps text-outline mb-md">SYSTEM TELEMETRY</h3>
+<div class="space-y-md">
+<div>
+<div class="flex justify-between text-[10px] font-bold text-outline mb-1">
+<span>GPU LOAD</span>
+<span>92%</span>
+</div>
+<div class="h-1 bg-outline-variant/20 rounded-full">
+<div class="w-[92%] h-full bg-secondary shadow-[0_0_10px_#ebb2ff]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold text-outline mb-1">
+<span>VRAM ADAPT</span>
+<span>12.4 GB</span>
+</div>
+<div class="h-1 bg-outline-variant/20 rounded-full">
+<div class="w-[60%] h-full bg-primary-container shadow-[0_0_10px_#00f2ff]"></div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col md:flex-row justify-between items-center px-margin py-lg w-full gap-md mt-xxl border-t border-outline-variant/10 bg-surface-container-lowest">
+<div class="flex flex-col gap-xs">
+<span class="font-label-caps text-label-caps text-primary">ICON CODE Y - AI FACTORY</span>
+<span class="font-body-md text-body-md text-outline">Developed by Eng. Youssef Mohamed El-Sayed</span>
+</div>
+<div class="flex items-center gap-xl">
+<div class="hidden lg:flex gap-lg">
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-body-md text-body-md" href="#">Documentation</a>
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-body-md text-body-md" href="#">System Status</a>
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-body-md text-body-md" href="#">Privacy Protocol</a>
+</div>
+<a class="flex items-center gap-sm bg-tertiary-container/10 border border-tertiary-fixed-dim px-md py-sm rounded-lg text-tertiary-fixed-dim hover:bg-tertiary-container/30 transition-all cursor-pointer" href="https://wa.me/201094555299" t
